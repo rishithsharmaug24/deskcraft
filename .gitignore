@@ -1,0 +1,22 @@
+# Inherited standing constraint: never commit secrets, data, or a database.
+.env
+.env.*
+data/
+*.duckdb
+*.duckdb.wal
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+dist/
+build/
+
+# Notebooks and scratch
+.ipynb_checkpoints/
+scratch/

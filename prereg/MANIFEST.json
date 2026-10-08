@@ -1,0 +1,36 @@
+{
+  "written": "2026-09-28",
+  "git": "git version 2.55.0.windows.2",
+  "repositories": {
+    "deskcraft": {
+      "commit": "e8679ad369afe2648c3dba69a3204a00f6cb1241",
+      "tree": "609c8ef1631474cdc19d1ccd20314564c02c3a43",
+      "archive": "deskcraft_e8679ad369af.zip",
+      "prefix": "deskcraft/",
+      "archive_members": 117,
+      "commit_blobs": 118,
+      "excluded": {
+        "tests/fixtures/panel_daily_admitted_dev_20260925.csv": "2450638629981c0548c9dbebd73c5124ae78fcce"
+      }
+    },
+    "curvecast": {
+      "commit": "3045a360e1ce748dcff367a4ba798052b5badb98",
+      "tree": "9af01a73bb592029bc48cbc9aeefbfa932a2d460",
+      "archive": "curvecast_3045a360e1ce.zip",
+      "prefix": "curvecast/",
+      "archive_members": 222,
+      "commit_blobs": 222,
+      "excluded": {}
+    }
+  },
+  "files": {
+    "curvecast_3045a360e1ce.zip": "bcc67cd4136e6a06eae89ca92531cf9382eeb6cb6ff19e2d0e0f67a490a3d416",
+    "curvecast_commit.txt": "5eb84f508b261738d16736b51c5d33092157e45751645ca09d96835cf9b79449",
+    "curvecast_ls-tree.txt": "5c42c4349d3e5ba2c2b4d2e1b5064810599ed02dfe25a71a91c3776aac1bfd32",
+    "deskcraft_commit.txt": "b1366134fa4a3eac127fca5850bda13b8c3e86014e057f61bfb378f918c95bf7",
+    "deskcraft_e8679ad369af.zip": "cceed6f14626d671d4828872817e5142b421b63ab3702cbf52d6491fdad400ff",
+    "deskcraft_ls-tree.txt": "781b2a38c8ff21f45a5ebff4f752135c9924303c5f20715a30249509aded7fc6",
+    "verify_deposit.py": "79779969c7cca21c8cb64c6ce22c2c9052ac7e9de3a8e1e25debe177a5d530a6"
+  },
+  "curvecast_archive_gate": "OK -- curvecast_3045a360e1ce.zip: 239 members"
+}

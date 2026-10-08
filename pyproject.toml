@@ -1,0 +1,166 @@
+[project]
+name = "deskcraft"
+version = "0.1.0"
+description = "A paper-only macro risk engine: what is the risk of this book, never should you hold it"
+requires-python = ">=3.12"
+dependencies = ["numpy>=2.0", "scipy>=1.11"]
+# Deliberately empty at D1. The engine's inputs are stated books and the objects
+# curvecast item 28 produces; nothing here fetches, and D1's boundary test is what
+# keeps that true rather than customary. numpy arrives with D4, when there is
+# arithmetic to do.
+#
+# ANNOTATED 2026-09-15 (D4, §0.8 of that package's pre-commit). It did not arrive, and
+# the prediction is left standing rather than deleted. D4's arithmetic is four legs,
+# five series and six scalar formulas, and `math.fsum` was already imported by book.py.
+# numpy is installed on the interpreter this suite runs on and adding it would have cost
+# nothing -- which is the whole reason it was refused: a dependency added because a
+# comment predicted one. The guard already enforced that answer, as it happens.
+# `ENGINE_IMPORT_ROOTS` is an equality, so naming numpy there with no engine file
+# importing it turns the census red. D8's covariance is the first thing that will need
+# it, and it can be added in the commit that does.
+#
+# ANNOTATED 2026-09-15 (D6, DD60). It arrived one package earlier than that last sentence
+# guessed, and for a reason neither D1 nor D4 anticipated. `deskcraft.factors` restates
+# `curvecast.stage3.factor_space._pca` and C60 holds the two at EXACT equality against
+# curvecast's own bytes -- so the restatement has to call the same eigensolver. A
+# hand-rolled Jacobi rotation on the 8x8 covariance would agree to about 1e-15, and
+# agreeing to a tolerance is precisely what D4's C50 refused: "a tolerance would pass a
+# reordered summation, which is how a restatement stops being one." So the dependency is
+# not here because a comment predicted it; it is here because the alternative was a
+# weaker bar. D1's other prediction in this block held exactly: the engine's inputs ARE
+# the objects curvecast item 28 produces, and D6 is the package that consumes them.
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "import-linter>=2.0", "ruff>=0.6"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/deskcraft"]
+
+# ---------------------------------------------------------------------------
+# The lint gate's selection, pinned at D4 (DD57). `ruff>=0.6` has been a declared dev
+# dependency since D1 with nothing running it; `tests/test_lint.py` is what runs it now,
+# and it holds at ZERO findings rather than at a baseline -- this repository had exactly
+# one when the gate was written, against curvecast's 29, so the stronger form is
+# available here and is taken.
+#
+# These four are ruff 0.15.22's own default selection, written down. Pinned rather than
+# inherited so the gate cannot move when ruff's defaults move: a lint floor that changes
+# under you on an upgrade is a floor that gets relaxed rather than read. Widening it was
+# measured and declined in D4's pre-commit §0.9 -- `E,W,F,I,UP,B,SIM` at 100 columns
+# gives 25 findings, most of them deliberate in test code -- because that is a decision
+# about this repository's style with two dozen edits attached, and not a thing to settle
+# inside a package about duration.
+# ---------------------------------------------------------------------------
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F"]
+
+# ---------------------------------------------------------------------------
+# Import contracts. Written at D1, before any code exists that could violate
+# them -- a contract added after the fact is a contract written to fit whatever
+# was already built.
+#
+# These are the machine-enforced form of PLAN_deskcraft.md §3. The boundary here
+# is INVERTED relative to curvecast's: there, an order is banned by banning the
+# words that would express one, because the output is text. Here `Direction` and
+# `Notional` are the subject matter, so the ban is on CAPABILITY -- no egress, no
+# execution, no credentials. With no network there is no order path, whatever a
+# function happens to be called.
+# ---------------------------------------------------------------------------
+[tool.importlinter]
+root_package = "deskcraft"
+# Required whenever a forbidden module is external, which every one of them is.
+# Without it import-linter exits on configuration and evaluates nothing -- so the
+# gate reports no verdict at all rather than a red one. C8 asserts this flag is
+# present, because its absence is silent.
+include_external_packages = true
+
+[[tool.importlinter.contracts]]
+name = "No broker SDK, ever"
+type = "forbidden"
+source_modules = ["deskcraft"]
+forbidden_modules = [
+    "kiteconnect",
+    "ib_insync",
+    "ibapi",
+    "alpaca",
+    "alpaca_trade_api",
+    "ccxt",
+    "oandapyV20",
+    "robin_stocks",
+    "tda",
+    "schwab",
+    "fyers_apiv3",
+    "upstox_client",
+    "smartapi",
+    "breeze_connect",
+    "dhanhq",
+    "binance",
+]
+# Asserted about this repo, not about this machine. `kiteconnect` IS installed here
+# for an unrelated repository that trades a live book, so "no broker SDK is
+# importable" would be a claim about the interpreter and would be red for reasons
+# that have nothing to do with deskcraft. What is meant, and what C5 checks three
+# ways, is that deskcraft does not reach one.
+
+[[tool.importlinter.contracts]]
+name = "No egress and no execution"
+type = "forbidden"
+source_modules = ["deskcraft"]
+forbidden_modules = [
+    "socket",
+    "urllib",
+    "requests",
+    "httpx",
+    "http",
+    "aiohttp",
+    "websockets",
+    "smtplib",
+    # Added at D3a (DD27). Each was measured escaping the D1 list on 2026-09-11;
+    # `urllib3`'s root is not `urllib`. C8 requires the tests' list to be a subset
+    # of this one, so the two cannot drift.
+    "ftplib",
+    "imaplib",
+    "nntplib",
+    "poplib",
+    "telnetlib",
+    "xmlrpc",
+    "socketserver",
+    "ssl",
+    "asyncio",
+    "webbrowser",
+    "urllib3",
+    "subprocess",
+]
+# The structural half of the boundary. An order needs a way out of the process;
+# closing every way out is stronger than enumerating the names an order might be
+# given, and it does not degrade as the vocabulary of the repo grows.
+
+# THE THIRD CONTRACT IS NOT HERE, AND THAT IS DELIBERATE. Withdrawn 2026-09-09.
+#
+# "The upstream edge never reaches an LLM or a live connection" was declared here
+# from D1 as `forbidden_modules = ["meip.lpal", "curvecast.news.scoring"]`. It was
+# never once evaluated, and it could not have been: import-linter refuses a dotted
+# external module outright -- "Invalid forbidden module meip.lpal: subpackages of
+# external packages are not valid" -- and the whole run aborts on it, taking the
+# two contracts that ARE expressible down with it. So the gate produced no verdict
+# on anything for nine days.
+#
+# Banning the parents instead is not available. deskcraft imports `meip.rates`
+# (D4's duration and convexity) and `curvecast.stage3.factor_space` (D10's
+# effective rank) by design, so forbidding `meip` or `curvecast` wholesale would be
+# red for the imports the plan requires.
+#
+# The ban is therefore an AST scan, `test_the_llm_edge_is_scanned` (C23) -- the same
+# resolution the deleted comment already used for the reverse direction, which
+# `lint-imports` also cannot see and which C7 has scanned since D1. The reasoning
+# it carried is preserved there in full. C8 now asserts the ban still exists in that
+# form, and refuses any forbidden module carrying a dot, so this cannot be
+# reintroduced in the shape that could not run.
+#
+# (The id above read C10 until D3a. M18a renumbered the pair to C23 and corrected
+# the three documents it named; nothing read comments, so this one stayed stale for
+# two days. C38 now checks every citation of a test by name, comments included.)

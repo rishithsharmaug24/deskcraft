@@ -1,0 +1,10 @@
+# Fixtures keep LF on every platform, and this repository's first two arrived without it.
+#
+# `core.autocrlf` is `true` on this machine, so `git add` stores LF and the next checkout
+# writes CRLF back. curvecast's `scripts/make_deskcraft_panel.py` renders these panels with
+# LF and its `--check` compares the committed bytes against a freshly rendered copy with
+# newline translation off -- deliberately, because a read that translated would make a
+# line-ending drift compare equal and defeat the rule. Without this file that check would
+# report the panels as stale on any fresh clone, and the person who cloned would be right
+# to distrust it. curvecast carries the same two lines for the same reason.
+tests/fixtures/** text eol=lf

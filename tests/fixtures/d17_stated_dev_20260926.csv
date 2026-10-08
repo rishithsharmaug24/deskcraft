@@ -1,0 +1,66 @@
+fy_end_date,cohort_rank,cik,class,instrument,sign,amount_usd,concept,member,step
+2013-12-31,1,40545,rates,SVENY01,-1,77890000000.0,F_net,,"V: none; max(CP, STB) 77890000000; FVH 0; CFH 0"
+2013-12-31,1,40545,crude,WTI_C2,1,16975000000.0,Revenues,OilAndGasMember,DD176 crude fact
+2013-12-31,2,34088,currency,CAD,1,35924000000.0,Revenues,CA,revenue on member
+2013-12-31,2,34088,currency,EUR,1,74391000000.0,Revenues,BE+DE+FR+IT,revenue on member
+2013-12-31,2,34088,currency,GBP,1,34061000000.0,Revenues,GB,revenue on member
+2013-12-31,2,34088,currency,JPY,1,124000000.0,Revenues,JP,revenue on member
+2013-12-31,2,34088,rates,SVENY01,-1,14051000000.0,F_net,,"V: none; max(CP, STB) 14051000000; FVH 0; CFH 0"
+2013-12-31,2,34088,crude,WTI_C2,-1,244156000000.0,CrudeOilAndProductPurchases,,DD176 crude fact
+2013-12-31,3,732717,rates,SVENY01,-1,20000000.0,F_net,,"V: none; max(CP, STB) 20000000; FVH 0; CFH 0"
+2013-12-31,4,732712,rates,SVENY01,-1,447000000.0,F_net,,"V: none; max(CP, STB) 447000000; FVH 0; CFH 0"
+2013-12-31,5,93410,rates,SVENY01,-1,5130000000.0,F_net,,"V: none; max(CP, STB) 5130000000; FVH 0; CFH 0"
+2013-12-31,5,93410,crude,WTI_C2,1,272508000000.0,OilAndGasRevenue,OperatingSegmentsandCoporateNonSegmentMember,DD176 crude fact
+2014-09-27,6,320193,currency,CNY,1,30638000000.0,SalesRevenueNet,CN,revenue on member
+2014-09-27,6,320193,rates,SVENY01,-1,6308000000.0,F_net,,"V: none; max(CP, STB) 6308000000; FVH 0; CFH 0"
+2014-01-31,7,104169,rates,SVENY01,-1,8627000000.0,F_net,,"V: floating members DenominatedEuroVariableMemberDomain+DenominatedSterlingVariableMember+DenominatedUSDollarVariableMemberDomain+DenominatedYenVariableMember; max(CP, STB) 7670000000; FVH 0; CFH 0"
+2014-06-30,8,789019,rates,SVENY01,-1,2000000000.0,F_net,,"V: none; max(CP, STB) 2000000000; FVH 0; CFH 0"
+2013-12-31,10,1166691,rates,SVENY01,-1,1350000000.0,F_net,,"V: none; max(CP, STB) 1350000000; FVH 0; CFH 0"
+2013-12-29,11,200406,rates,SVENY01,-1,4852000000.0,F_net,,"V: none; max(CP, STB) 4852000000; FVH 0; CFH 0"
+2013-12-31,12,51143,rates,SVENY01,-1,2458000000.0,F_net,,"V: none; max(CP, STB) 2458000000; FVH 0; CFH 0"
+2013-12-31,13,1163165,currency,CAD,1,9294000000.0,SalesRevenueNet,CA+CanadaBeforeIntersegmentEliminationsMember+IntersegmentEliminationsBeforeCanadaMember,revenue on member
+2013-12-31,13,1163165,currency,CNY,1,2120000000.0,SalesRevenueNet,CN,revenue on member
+2013-12-31,13,1163165,currency,GBP,1,7717000000.0,SalesRevenueNet,GB,revenue on member
+2013-12-31,13,1163165,rates,SVENY01,-1,961000000.0,F_net,,"V: none; max(CP, STB) 961000000; FVH 0; CFH 0"
+2013-12-31,13,1163165,crude,WTI_C2,1,24899000000.0,SalesRevenueNet,CrudeOilMember,DD176 crude fact
+2013-12-31,14,1288776,currency,GBP,1,5638000000.0,Revenues,GB,revenue on member
+2013-12-31,15,310158,currency,JPY,1,4044000000.0,SalesRevenueGoodsNet,JP,revenue on member
+2013-12-31,15,310158,rates,SVENY01,-1,1619000000.0,F_net,,"V: floating members FloatingRateNotesDue2016Member+FloatingRateNotesDue2018Member+VariableRateDomain; max(CP, STB) 0; FVH 0; CFH 0"
+2014-07-26,16,858877,currency,JPY,1,7355000000.0,SalesRevenueNet,AsiaPacificJapanAndChinaMember,revenue on member
+2013-12-31,18,12927,currency,CAD,1,1486000000.0,Revenues,CA,revenue on member
+2013-12-31,18,12927,currency,CNY,1,22755000000.0,Revenues,AsiaOtherThanChinaMember+CN,revenue on member
+2013-12-28,19,50863,currency,JPY,1,3725000000.0,SalesRevenueNet,JP,revenue on member
+2013-12-31,20,101829,rates,SVENY01,-1,888000000.0,F_net,,"V: floating members LIBORPlus0270FloatingRateNotesDue2013Member+LIBORPlus0500FloatingRateNotesDue2015Member; max(CP, STB) 388000000; FVH 0; CFH 0"
+2014-05-31,21,1341439,currency,CAD,1,1190000000.0,Revenues,CA,revenue on member
+2014-05-31,21,1341439,currency,EUR,1,2631000000.0,Revenues,FR+GR,revenue on member
+2014-05-31,21,1341439,currency,GBP,1,2309000000.0,Revenues,GB,revenue on member
+2014-05-31,21,1341439,currency,JPY,1,1558000000.0,Revenues,JP,revenue on member
+2013-12-31,22,21344,rates,SVENY01,-1,16853000000.0,F_net,,"V: none; max(CP, STB) 16853000000; FVH 0; CFH 0"
+2014-09-27,23,1001039,currency,CAD,1,36769000000.0,SalesRevenueNet,UnitedStatesAndCanadaMember,revenue on member
+2013-12-31,24,1109357,rates,SVENY01,-1,341000000.0,F_net,,"V: none; max(CP, STB) 341000000; FVH 0; CFH 0"
+2013-12-31,24,1109357,crude,WTI_C2,-1,7433011008.07,SegmentReportingInformationRevenueNetOfPurchasePowerAndFuelFromExternalCustomers,GenerationTotalConsolidatedGroupMember,DD176 crude fact
+2013-12-28,25,77476,rates,SVENY01,-1,2924000000.0,F_net,,"V: none; max(CP, STB) 2924000000; FVH 0; CFH 0"
+2013-12-31,26,1506307,currency,CAD,1,398000000.0,Revenues,CA,revenue on member
+2013-12-31,26,1506307,currency,MXN,1,16000000.0,Revenues,MX,revenue on member
+2013-12-31,27,1103982,rates,SVENY01,-1,1636000000.0,F_net,,"V: none; max(CP, STB) 1636000000; FVH 0; CFH 0"
+2013-12-31,28,797468,rates,SVENY01,-1,68000000.0,F_net,,"V: floating members VariableRateBondsDue2030Member; max(CP, STB) 0; FVH 0; CFH 0"
+2013-12-31,28,797468,crude,WTI_C2,-1,137000000.0,EnvironmentalCostsOperatingExpense,OilAndGasMember,DD176 crude fact
+2013-12-31,29,753308,rates,SVENY01,1,5809000000.0,F_net,,"V: none; max(CP, STB) 691000000; FVH 0; CFH 6500000000"
+2013-12-31,29,753308,crude,WTI_C2,-1,4958000000.0,FuelPurchasedPowerAndInterchangeExpense,,DD176 crude fact
+2013-12-31,30,1105705,currency,CAD,1,21411000000.0,Revenues,UnitedStatesAndCanadaMember,revenue on member
+2013-12-31,31,1570585,rates,SVENY01,-1,549700000.0,F_net,,"V: floating members KbwSeniorSecuredFloatingRateNotesMember; max(CP, STB) 0; FVH 0; CFH 0"
+2013-12-31,32,87347,rates,SVENY01,-1,964000000.0,F_net,,"V: none; max(CP, STB) 964000000; FVH 0; CFH 0"
+2013-12-31,33,92122,rates,SVENY01,-1,1482000000.0,F_net,,"V: none; max(CP, STB) 1482000000; FVH 0; CFH 0"
+2013-12-31,33,92122,crude,WTI_C2,-1,5510000000.0,UtilitiesOperatingExpenseFuelUsed,,DD176 crude fact
+2013-12-31,34,831259,currency,CHF,1,1098000000.0,SalesRevenueNet,CH,revenue on member
+2013-12-31,34,831259,currency,CNY,1,1078000000.0,SalesRevenueNet,CN,revenue on member
+2013-12-31,34,831259,currency,EUR,1,1223000000.0,SalesRevenueNet,ES,revenue on member
+2013-12-31,34,831259,currency,JPY,1,2141000000.0,SalesRevenueNet,JP,revenue on member
+2013-12-31,34,831259,rates,SVENY01,-1,4000000000.0,F_net,,"V: floating members BankTermLoanMember; max(CP, STB) 0; FVH 0; CFH 0"
+2013-12-31,34,831259,crude,WTI_C2,-1,12774000000.0,DiscountedFutureNetCashFlowsRelatingToProvedOilAndGasReservesFutureProductionCosts1,,DD176 crude fact
+2013-12-31,35,6769,currency,CAD,1,1224000000.0,ExplorationAndProductionRevenue,CA,revenue on member
+2013-12-31,35,6769,crude,WTI_C2,-1,50554000000.0,DiscountedFutureNetCashFlowsRelatingToProvedOilAndGasReservesFutureProductionCosts1,,DD176 crude fact
+2013-12-31,37,4904,rates,SVENY01,-1,757000000.0,F_net,,"V: none; max(CP, STB) 757000000; FVH 0; CFH 0"
+2013-12-31,38,1004980,rates,SVENY01,-1,1174000000.0,F_net,,"V: none; max(CP, STB) 1174000000; FVH 0; CFH 0"
+2013-12-31,40,27904,rates,SVENY01,-1,1400000000.0,F_net,,"V: floating members TermLoanFacilityMember; max(CP, STB) 0; FVH 0; CFH 0"
+2013-12-31,40,27904,crude,WTI_C2,-1,9397000000.0,FuelCosts,,DD176 crude fact
